@@ -22,6 +22,7 @@ var products = []product{
 func main() {
 	router := gin.Default()
 	router.GET("/products", getProducts)
+	router.GET("/albums/:id", getProductByID)
 	router.POST("/products", postProducts)
 	router.Run("localhost:8080")
 }
@@ -40,4 +41,15 @@ func postProducts(c *gin.Context) {
 	products = append(products, newProduct)
 	c.IndentedJSON(http.StatusCreated, newProduct)
 
+}
+func getProductByID(c *gin.Context) {
+	id := c.Param("id")
+
+	for _, a := range products {
+		if a.ID == id {
+			c.IndentedJSON(http.StatusOK, a)
+			return
+		}
+	}
+	c.IndentedJSON(http.StatusNotFound, gin.H{"message": "product not found"})
 }
