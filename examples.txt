@@ -1,0 +1,6 @@
+#####
+ curl http://localhost:8080/products \
+    --include \
+    --header "Content-Type: application/json" \
+    --request "POST" \
+    --data '{"id": "4","title": "chips","product": "rusia kartoshka","price": 99999.99}'
