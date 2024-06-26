@@ -1,6 +1,20 @@
 #####
+curl http://localhost:8080/products
+
+#####
 curl http://localhost:8080/products \
     --include \
     --header "Content-Type: application/json" \
     --request "POST" \
     --data '{"id": "4","title": "chipsa","product": "lays","price": 52.99}'
+
+####
+curl -X "PUT" http://localhost:8080/products \2
+    --include \
+    --header "Content-Type: application/json" \
+    --request "PUT" \
+    --data '{"id": "4","title": "aaaGGGaachipsa"}'
+####
+
+curl  -X "DELETE" http://localhost:8080/products/1
+###
