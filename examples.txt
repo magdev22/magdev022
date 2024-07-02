@@ -9,11 +9,11 @@ curl http://localhost:8080/products \
     --data '{"id": "4","title": "chipsa","product": "lays","price": 52.99}'
 
 ####
-curl -X "PUT" http://localhost:8080/products \2
+curl  http://localhost:8080/updateProducts/2
     --include \
     --header "Content-Type: application/json" \
-    --request "PUT" \
-    --data '{"id": "4","title": "aaaGGGaachipsa"}'
+    --request "POST" \
+    --data '{"id": "2","title": "baakkokokokokok","product": "vgvj","price": 999}'
 ####
 
 curl  -X "DELETE" http://localhost:8080/products/1

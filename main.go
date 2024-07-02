@@ -58,16 +58,17 @@ func deleteProductByID(c *gin.Context) {
 		}
 	}
 
-	c.IndentedJSON(http.StatusNotFound, gin.H{"message": "album not found"})
+	c.IndentedJSON(http.StatusNotFound, gin.H{"message": "product not found"})
 }
 
 func updateProductByID(c *gin.Context) {
+	var newProduct product
 	id := c.Param("id")
-
-	for i := range products {
-		if products[i].ID == id {
-			c.BindJSON(&products[i])
-			c.IndentedJSON(http.StatusOK, products[i])
+	for i, a := range products {
+		if a.ID == id {
+			c.BindJSON(&newProduct)
+			products[i] = newProduct
+			c.IndentedJSON(http.StatusOK, newProduct)
 			return
 		}
 	}
@@ -79,7 +80,7 @@ func main() {
 	router.GET("/products", getProducts)
 	router.GET("/products/:id", getProductByID)
 	router.DELETE("/products/:id", deleteProductByID)
-	router.PUT("/products/:id", updateProductByID)
+	router.POST("/updateProducts/:id", updateProductByID)
 	router.POST("/products", postProducts)
 	router.Run("localhost:8080")
 }
