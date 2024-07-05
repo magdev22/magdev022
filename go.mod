@@ -1,5 +1,4 @@
-module example/web-service-gin
-
+module api
 go 1.22.3
 
 require github.com/gin-gonic/gin v1.10.0
