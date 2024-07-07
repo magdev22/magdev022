@@ -1,14 +1,14 @@
 package model
 
-type Product struct {
+type Bill struct {
 	ID      string  `json:"id"`
-	Title   string  `json:"title"`
-	Product string  `json:"product"`
-	Price   float64 `json:"price"`
+	Name    string  `json:"name"`
+	Surname string  `json:"surname"`
+	Balance float64 `json:"balance"`
 }
 
-var Products = []Product{
-	{ID: "1", Title: "kanfetka", Product: "chi orio", Price: 52.52},
-	{ID: "2", Title: "moloko", Product: "ne moloko", Price: 77.77},
-	{ID: "3", Title: "chokoladka", Product: "alenka", Price: 66.66},
+var Bills = []Bill{
+	{ID: "1", Name: "Isa", Surname: "Isaev", Balance: 52.52},
+	{ID: "2", Name: "Suleyma", Surname: "Suleymanov", Balance: 77.77},
+	{ID: "3", Name: "Mag", Surname: "Magov", Balance: 14.88},
 }

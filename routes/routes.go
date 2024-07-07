@@ -8,10 +8,10 @@ import (
 
 func Routes() {
 	router := gin.Default()
-	router.GET("/products", handlers.GetProducts)
-	router.GET("/products/:id", handlers.GetProductByID)
-	router.DELETE("/products/:id", handlers.DeleteProductByID)
-	router.POST("/updateProducts/:id", handlers.UpdateProductByID)
-	router.POST("/products", handlers.PostProducts)
+	router.GET("/bills", handlers.GetBills)
+	router.GET("/bills/:id", handlers.GetBillByID)
+	router.DELETE("/bills/:id", handlers.DeleteBillByID)
+	router.POST("/updateBills/:id", handlers.UpdateBillByID)
+	router.POST("/bills", handlers.PostBills)
 	router.Run("localhost:8080")
 }
